@@ -17,12 +17,13 @@ const App: React.FC = () => {
   }, []);
 
   const propIcon = state?.icon_url;
+  const propQuote = state?.value;
 
   return (
     <StyledEngineProvider injectFirst>
       <div className="container">
         <Header iconURL={propIcon} />
-        <Main />
+        <Main randomQuote={propQuote} />
       </div>
     </StyledEngineProvider>
   );

@@ -4,10 +4,15 @@ import CategoryList from "../categoryList/CategoryList";
 import ChuckQoute from "../chuckQuote/ChuckQuote";
 import { fetchCategoryByQuery } from "../../api-services/ApiServices";
 
-const Main: React.FC = () => {
+interface IMainProp {
+  randomQuote: string | undefined;
+}
+
+const Main: React.FC<IMainProp> = ({ randomQuote }) => {
   const [category, setCategory] = useState<string>("");
   const [qoute, setQoute] = useState<string>("");
   const [isLoading, setIsloading] = useState<boolean>(false);
+  const [isFirstRender, setIsFirstRender] = useState<boolean>(true);
 
   useEffect(() => {
     (async () => {
@@ -32,6 +37,7 @@ const Main: React.FC = () => {
     setCategory("");
     setQoute("");
     setIsloading(true);
+    setIsFirstRender(false);
     setCategory(str);
   };
 
@@ -39,7 +45,12 @@ const Main: React.FC = () => {
     <div className={s.container}>
       <h1 className={s.title}>Categories</h1>
       <CategoryList setActiveCategory={setActiveCategory} category={category} />
-      <ChuckQoute qoute={qoute} isLoading={isLoading} />
+      <ChuckQoute
+        qoute={qoute}
+        isLoading={isLoading}
+        randomQuote={randomQuote}
+        isFirstRender={isFirstRender}
+      />
     </div>
   );
 };

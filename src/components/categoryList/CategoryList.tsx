@@ -1,10 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchCategories } from "../../api-services/ApiServices";
 import s from "./CategoryList.module.css";
 import { v4 as uuidv4 } from "uuid";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import ToggleButton from "@mui/material/ToggleButton";
-import { act } from "react-dom/test-utils";
 
 interface IPropCategory {
   setActiveCategory: (str: string) => void;
