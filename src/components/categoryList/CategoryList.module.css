@@ -1,0 +1,31 @@
+.container {
+  margin-bottom: 165px;
+}
+
+.toggleButtonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin-left: -20px;
+}
+
+.categoryButton {
+  width: 170px;
+  height: 57px;
+
+  margin-top: 20px;
+  /*margin-left in CategoryList.tsx => ToggleButtonGroup in sx*/
+
+  border: none;
+
+  color: #1c1c39;
+  background-color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.1;
+  text-transform: lowercase;
+  /* filter: drop-shadow(0px 22px 80px rgba(72, 70, 106, 0.07)) 
+    drop-shadow(0px 2.75474px 10.0172px rgba(72, 70, 106, 0.035)); ===========>Very expensive for render */
+}
